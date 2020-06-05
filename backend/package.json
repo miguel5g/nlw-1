@@ -5,13 +5,17 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./build/Server.js",
-    "dev": "ts-node-dev ./src/Server.ts",
-    "build": "tsc"
+    "dev": "ts-node-dev --ignore-watch node_modules ./src/Server.ts",
+    "build": "tsc",
+    "knex:seed": "knex --knexfile knexfile.ts seed:run",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",

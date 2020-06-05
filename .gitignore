@@ -4,4 +4,5 @@
 
 # Files
 yarn.lock
-.env
+**.env
+**.sqlite
